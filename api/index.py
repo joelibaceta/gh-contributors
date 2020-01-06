@@ -19,6 +19,8 @@ class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         org = self.get_param('org', self.path)
         repo = self.get_param('repo', self.path)
+        print(org)
+        print(repo)
         output = BytesIO()
         image = self.getContributors(org, repo)
         image.save(output)
