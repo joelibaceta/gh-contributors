@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "gh-contributors",
+    "builds": [
+        { "src": "/api/*.py", "use": "@now/python" , "config": { "maxLambdaSize": "10mb" } }
+    ],    
+    "routes": [
+        { "src": "/img", "dest": "/api/index.py" }
+    ]
+}
