@@ -2,6 +2,7 @@ from http.server import BaseHTTPRequestHandler
 import requests
 import json
 import re
+import math
 from PIL import Image
 from io import BytesIO
 
