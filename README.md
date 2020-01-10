@@ -6,5 +6,8 @@ Github contributors avatars builder
 
 Just use it as an image tag
 
+`<img src="https://gh-contributors.now.sh/img?org=facebook&repo=react"/>`
+
 <img src="https://gh-contributors.now.sh/img?org=facebook&repo=react"/>
+ 
  
