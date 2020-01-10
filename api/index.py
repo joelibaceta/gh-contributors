@@ -5,8 +5,11 @@ import re
 import math
 from PIL import Image
 from io import BytesIO
+import os
 
 class handler(BaseHTTPRequestHandler):
+
+    
 
     def get_param(self, name, path, default=None):
         pattern = re.compile(r""+name+"\=([^\=\&]+)")
@@ -38,8 +41,8 @@ class handler(BaseHTTPRequestHandler):
 
     def getContributors(self, org, repo, size):
 
-        client_id     = process.env.CLIENT_ID
-        client_secret = process.env.CLIENT_SECRET
+        client_id     = os.environ.get('CLIENT_ID')
+        client_secret = os.environ.get('CLIENT_SECRET')
 
         response = requests.get(f'https://api.github.com/repos/{org}/{repo}/contributors?client_id={client_id}&client_secret={client_secret}')
         contributors = response.json()
