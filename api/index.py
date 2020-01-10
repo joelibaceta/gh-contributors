@@ -38,7 +38,10 @@ class handler(BaseHTTPRequestHandler):
 
     def getContributors(self, org, repo, size):
 
-        response = requests.get(f'https://api.github.com/repos/{org}/{repo}/contributors')
+        client_id     = process.env.CLIENT_ID
+        client_secret = process.env.CLIENT_SECRET
+
+        response = requests.get(f'https://api.github.com/repos/{org}/{repo}/contributors?client_id={client_id}&client_secret={client_secret}')
         contributors = response.json()
         images = []
         dimension = int(size);
